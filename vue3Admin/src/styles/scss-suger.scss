@@ -1,0 +1,405 @@
+// refer to tailwind.css
+// https://unpkg.com/tailwindcss@2.2.15/dist/tailwind.css
+// You can add custom component class
+body {
+  --borderColor: #e8e8e8;
+}
+
+// ----------------float----------------
+.float-right {
+  float: right;
+}
+.float-left {
+  float: left;
+}
+.float-none {
+  float: none;
+}
+
+// ----------------display----------------
+.block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+.inline {
+  display: inline;
+}
+.flex {
+  display: flex;
+}
+.inline-flex {
+  display: inline-flex;
+}
+.table {
+  display: table;
+}
+.inline-table {
+  display: inline-table;
+}
+.table-cell {
+  display: table-cell;
+}
+.table-column {
+  display: table-column;
+}
+.table-row {
+  display: table-row;
+}
+.list-item {
+  display: list-item;
+}
+.hidden {
+  display: none;
+}
+
+// ----------------flex----------------
+.flex-1 {
+  flex: 1 1 0%;
+}
+.flex-auto {
+  flex: 1 1 auto;
+}
+.flex-initial {
+  flex: 0 1 auto;
+}
+.flex-none {
+  flex: none;
+}
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+.flex-shrink {
+  flex-shrink: 1;
+}
+.flex-grow-0 {
+  flex-grow: 0;
+}
+.flex-grow {
+  flex-grow: 1;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
+// ----------------flex align----------------
+.items-start {
+  align-items: flex-start;
+}
+.items-end {
+  align-items: flex-end;
+}
+.items-center {
+  align-items: center;
+}
+.items-baseline {
+  align-items: baseline;
+}
+.items-stretch {
+  align-items: stretch;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+// ----------------align----------------
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-justify {
+  text-align: justify;
+}
+.align-baseline {
+  vertical-align: baseline;
+}
+.align-top {
+  vertical-align: top;
+}
+.align-middle {
+  vertical-align: middle;
+}
+.align-bottom {
+  vertical-align: bottom;
+}
+.align-text-top {
+  vertical-align: text-top;
+}
+.align-text-bottom {
+  vertical-align: text-bottom;
+}
+
+// ----------------overflow----------------
+.overflow-auto {
+  overflow: auto;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.overflow-visible {
+  overflow: visible;
+}
+.overflow-scroll {
+  overflow: scroll;
+}
+.overflow-x-auto {
+  overflow-x: auto;
+}
+.overflow-y-auto {
+  overflow-y: auto;
+}
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+.overflow-x-visible {
+  overflow-x: visible;
+}
+.overflow-y-visible {
+  overflow-y: visible;
+}
+.overflow-x-scroll {
+  overflow-x: scroll;
+}
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+// ----------------width----------------
+.w-full {
+  width: 100%;
+}
+.w-screen {
+  width: 100vw;
+}
+.w-min {
+  width: min-content;
+}
+.w-max {
+  width: max-content;
+}
+
+// ----------------height----------------
+.h-full {
+  height: 100%;
+}
+.h-screen {
+  height: 100vh;
+}
+
+// ----------------overflow----------------
+.overflow-auto {
+  overflow: auto;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.overflow-visible {
+  overflow: visible;
+}
+.overflow-scroll {
+  overflow: scroll;
+}
+.overflow-x-auto {
+  overflow-x: auto;
+}
+.overflow-y-auto {
+  overflow-y: auto;
+}
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+.overflow-x-visible {
+  overflow-x: visible;
+}
+.overflow-y-visible {
+  overflow-y: visible;
+}
+.overflow-x-scroll {
+  overflow-x: scroll;
+}
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+// ----------------transform-origin----------------
+.origin-center {
+  transform-origin: center;
+}
+.origin-top {
+  transform-origin: top;
+}
+.origin-top-right {
+  transform-origin: top right;
+}
+.origin-right {
+  transform-origin: right;
+}
+.origin-bottom-right {
+  transform-origin: bottom right;
+}
+.origin-bottom {
+  transform-origin: bottom;
+}
+.origin-bottom-left {
+  transform-origin: bottom left;
+}
+.origin-left {
+  transform-origin: left;
+}
+.origin-top-left {
+  transform-origin: top left;
+}
+
+// ----------------border----------------
+.border {
+  border: px(1) solid var(--borderColor);
+}
+.border-top {
+  border-top: px(1) solid var(--borderColor);
+}
+.border-top-thin {
+  border-top: px(0.5) solid var(--borderColor);
+}
+.border-left {
+  border-left: px(1) solid var(--borderColor);
+}
+.border-left-thin {
+  border-left: px(0.5) solid var(--borderColor);
+}
+.border-right {
+  border-right: px(1) solid var(--borderColor);
+}
+.border-right-thin {
+  border-right: px(0.5) solid var(--borderColor);
+}
+.border-bottom {
+  border-bottom: px(1) solid var(--borderColor);
+}
+.border-bottom-thin {
+  border-bottom: px(0.5) solid var(--borderColor);
+}
+@for $i from 2 through 10 {
+  .round-#{$i} {
+    border-radius: px($i);
+  }
+}
+.round-half {
+  border-radius: 50%;
+}
+.round-whole {
+  border-radius: 100%;
+}
+.border-solid {
+  border-style: solid;
+}
+.border-dashed {
+  border-style: dashed;
+}
+.border-dotted {
+  border-style: dotted;
+}
+.border-double {
+  border-style: double;
+}
+.border-none {
+  border-style: none;
+}
+.border-transparent {
+  border-color: transparent;
+}
+
+// ----------------padding margin----------------
+@for $i from 0 through 30 {
+  // margin
+  .m-#{$i} {
+    margin: px($i);
+  }
+  .mt-#{$i} {
+    margin-top: px($i);
+  }
+  .mb-#{$i} {
+    margin-bottom: px($i);
+  }
+  .ml-#{$i} {
+    margin-left: px($i);
+  }
+  .mr-#{$i} {
+    margin-right: px($i);
+  }
+  //  padding
+  .p-#{$i} {
+    padding: px($i);
+  }
+  .pt-#{$i} {
+    padding-top: px($i);
+  }
+  .pb-#{$i} {
+    padding-bottom: px($i);
+  }
+  .pl-#{$i} {
+    padding-left: px($i);
+  }
+  .pr-#{$i} {
+    padding-right: px($i);
+  }
+}
+// ----------------fonsize----------------
+@for $i from 10 through 30 {
+  .fz-#{$i} {
+    font-size: px($i);
+  }
+}
+
+// ----------------component class----------------
+.row-between-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.row-start-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

@@ -1,0 +1,48 @@
+{
+  "eslint.codeActionsOnSave.mode": "problems",
+  "eslint.format.enable": true,
+  "editor.formatOnType": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "css.lint.idSelector": "warning",
+  "css.lint.zeroUnits": "warning",
+  "scss.lint.zeroUnits": "warning",
+  "prettier.printWidth": 100,
+  "prettier.bracketSpacing": true,
+  "prettier.useTabs": false,
+  "prettier.tabWidth": 2,
+  "prettier.trailingComma": "es5",
+  "prettier.semi": false,
+  "prettier.htmlWhitespaceSensitivity": "strict",
+  "prettier.arrowParens": "always",
+  "prettier.jsxBracketSameLine": false,
+  "prettier.embeddedLanguageFormatting": "auto",
+  "prettier.insertPragma": false,
+  "prettier.jsxSingleQuote": false,
+  "prettier.quoteProps": "as-needed",
+  "prettier.requirePragma": false,
+  "prettier.vueIndentScriptAndStyle": true,
+  "prettier.singleQuote": true,
+  "javascript.format.semicolons": "insert",
+  "typescript.format.semicolons": "insert",
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": false,
+  "typescript.format.insertSpaceBeforeFunctionParenthesis": false,
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "html.format.indentInnerHtml": false,
+  "volar.completion.preferredTagNameCase": "kebab",
+  "scss.lint.duplicateProperties": "warning",
+  "scss.lint.idSelector": "warning",
+}

@@ -1,0 +1,57 @@
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <!-- 一些程序预览页面时显示的图片 -->
+    <meta
+      name="share_logo"
+      itemprop="image"
+      property="og:image"
+      content="<%= process.env.VUE_APP_SHAREPIC %>"
+    />
+    <meta name="description" content="<%= process.env.VUE_APP_DESC %>" itemprop="description" />
+    <link href="" type="image/x-icon" rel="icon" />
+    <title><%= process.env.VUE_APP_TITLE %></title>
+    <script>
+      !(function (e) {
+        function jump() {
+          var w = e.innerWidth,
+            l = location.href,
+            m = w > 768 ? 'pc' : 'mobile',
+            reg = new RegExp(m),
+            hash = l.split('?')[1] || ''
+          if (!/#\/pc$/.test(l) && !/#\/mobile$/.test(l)) {
+            location.href = location.origin + location.pathname + '#/' + m + '?' + hash
+            return
+          }
+          !reg.test(l) && (location.href = l.replace(w > 768 ? 'mobile' : 'pc', m))
+        }
+        jump()
+        e.addEventListener('resize', jump)
+        e.addEventListener('pageshow', function (e) {
+          e.persisted && jump()
+        })
+      })(window)
+    </script>
+    <% if(process.env.VUE_APP_ENV === 'produtest'){ %>
+    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+    <script>
+      eruda.init()
+    </script>
+    <% } %>
+  </head>
+  <body>
+    <noscript>
+      <strong
+        >We're sorry but <%= webpackConfig.name %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong
+      >
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

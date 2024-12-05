@@ -1,0 +1,218 @@
+@use 'sass:math' as math;
+
+/* 清除浮动 */
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+/* 三角形 */
+@mixin triangle($width, $height, $color, $direction) {
+  $width: math.div($width, 2);
+  $color-border-style: $height solid $color;
+  $transparent-border-style: $width solid transparent;
+  height: 0;
+  width: 0;
+
+  @if $direction==up {
+    border-bottom: $color-border-style;
+    border-left: $transparent-border-style;
+    border-right: $transparent-border-style;
+  } @else if $direction==right {
+    border-left: $color-border-style;
+    border-top: $transparent-border-style;
+    border-bottom: $transparent-border-style;
+  } @else if $direction==down {
+    border-top: $color-border-style;
+    border-left: $transparent-border-style;
+    border-right: $transparent-border-style;
+  } @else if $direction==left {
+    border-right: $color-border-style;
+    border-top: $transparent-border-style;
+    border-bottom: $transparent-border-style;
+  }
+}
+
+/* 单行、多行溢出显示省略号 */
+@mixin ellipsis($clamp: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @if ($clamp == 1) {
+    white-space: nowrap;
+  } @else {
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $clamp;
+    -webkit-box-orient: vertical;
+  }
+}
+
+/* 媒体查询 */
+@mixin mediaWidth($maxWidth: 0, $minWidth: 0) {
+  @if ($maxWidth !=0 and $minWidth !=0) {
+    @media only screen and (min-width: $minWidth) and (max-width: $maxWidth) {
+      @content;
+    }
+  } @else if($maxWidth !=0) {
+    @media only screen and (max-width: $maxWidth) {
+      @content;
+    }
+  } @else if($minWidth !=0) {
+    @media only screen and (min-width: $minWidth) {
+      @content;
+    }
+  }
+}
+
+/* 高分辨率媒体查询,用于二倍图设置 */
+@mixin hdpi($ratio: 1.3) {
+  @media only screen and (-webkit-min-device-pixel-ratio: $ratio),
+  screen and (min-resolution: #{round($ratio*96)}dpi) {
+    @content;
+  }
+}
+
+@function cwp($px, $base: 375px) {
+  @return math.div($px, $base);
+}
+
+@function px2vw($px, $base: 375px) {
+  @return math.div($px, $base) * 100vw;
+}
+
+@mixin border-bottom {
+  &::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+    border-style: solid;
+    transform: scale(0.5, 0.5);
+    border-radius: 1px;
+    box-sizing: border-box;
+    pointer-events: none;
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-color: var(--outline);
+  }
+}
+
+@mixin border($direction: bottom, $color: var(--outline), $width: 0.5px) {
+  &::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+    border-style: solid;
+    transform: scale(0.5, 0.5);
+    border-radius: 1px;
+    box-sizing: border-box;
+    pointer-events: none;
+    border-width: 0;
+    border-color: $color;
+    @if $direction == top {
+      border-top-width: $width * 2;
+    } @else if $direction == right {
+      border-right-width: $width * 2;
+    } @else if $direction == bottom {
+      border-bottom-width: $width * 2;
+    } @else if $direction == left {
+      border-left-width: $width * 2;
+    } @else if $direction == all {
+      border-width: $width * 2;
+      border-radius: 0;
+    }
+  }
+}
+
+@mixin safeTop($px: 0, $direction: top) {
+  padding-#{$direction}: calc(16px + #{$px});
+  padding-#{$direction}: calc(constant(safe-area-inset-top) + #{$px});
+  padding-#{$direction}: calc(env(safe-area-inset-top) + #{$px});
+}
+
+@mixin safeBottom($px: 0, $direction: bottom) {
+  padding-#{$direction}: calc(16px + #{$px});
+  padding-#{$direction}: calc(constant(safe-area-inset-bottom) + #{$px});
+  padding-#{$direction}: calc(env(safe-area-inset-bottom) + #{$px});
+}
+
+@mixin hideScrollBar() {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin scroller($width: 4px, $color: var(--outline), $autoHide: 0) {
+  $radius: math.div($width, 2);
+  @if $autoHide {
+    &:hover {
+      &::-webkit-scrollbar-thumb {
+        background: $color;
+      }
+    }
+  }
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $width;
+  }
+  /* 滚动槽 */
+  &::-webkit-scrollbar-track {
+    border-radius: $radius;
+  }
+  /* 滚动条滑块 */
+  &::-webkit-scrollbar-thumb {
+    border-radius: $radius;
+    width: $width;
+    height: $width;
+    @if $autoHide {
+      background: transparent;
+    } @else {
+      background: $color;
+    }
+  }
+}
+.scroller {
+  @include scroller();
+  @include mediaWidth($maxWidth: 768px) {
+    @include scroller($width: 0px);
+  }
+}
+
+@mixin gradient-text($startColor, $endColor, $direction: to right) {
+  background: linear-gradient($direction, $startColor, $endColor);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block; // 保证background-clip生效
+  position: relative;
+  color: transparent; // 对于支持的浏览器，保持文字透明
+
+  @supports not ((-webkit-text-fill-color: transparent) and (background-clip: text)) {
+    color: black; // 默认文字颜色作为回退
+    &::before {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient($direction, $startColor, $endColor);
+      -webkit-background-clip: text;
+      background-clip: text;
+      z-index: -1;
+      display: block;
+      -webkit-text-fill-color: transparent;
+      color: transparent; // 对于不支持的浏览器，保持文字透明
+    }
+  }
+}

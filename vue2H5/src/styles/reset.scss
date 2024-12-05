@@ -1,0 +1,9 @@
+@import "~normalize.css";
+
+body {
+  font-size: 16PX;
+  * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color:transparent
+  }
+}

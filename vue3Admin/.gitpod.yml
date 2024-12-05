@@ -1,0 +1,11 @@
+image:
+  file: gitpod.Dockerfile
+# 在工作区启动时启动的命令
+tasks:
+  - init: npm install && npm run build:test
+    command: vite preview
+# 工作区启动时要公开的端口
+ports:
+  - port: 5003
+    onOpen: open-preview
+    visibility: public

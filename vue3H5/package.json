@@ -1,0 +1,97 @@
+{
+    "name": "vue3temp",
+    "version": "1.0.0",
+    "license": "UNLICENSED",
+    "private": true,
+    "author": "",
+    "packageManager": "pnpm@6.27.0",
+    "scripts": {
+        "preinstall": "npx only-allow pnpm",
+        "dev": "vite --mode development --host",
+        "warning": "echo '31m如果切换了分支，请检查是否重新安装了依赖保证node_modules的正确性'",
+        "build": "pnpm run warning && vite build --mode production",
+        "build:test": "pnpm run warning && vite build --mode test",
+        "preview": "pnpm run build && vite preview",
+        "preview:test": "pnpm run build:test && vite preview",
+        "upload": "node scripts/deploy/pushTag.js",
+        "lint": "eslint --ext .js,.jsx,.vue,.ts,.tsx src",
+        "lintfix": "eslint --ext .js,.jsx,.vue,.ts,.tsx src --fix",
+        "prepare": "husky install"
+    },
+    "lint-staged": {
+        "*.{vue,js,ts}": "eslint --fix --max-warnings 0"
+    },
+    "dependencies": {
+        "@vicons/antd": "^0.12.0",
+        "@vueuse/core": "^10.1.0",
+        "axios": "1.3.6",
+        "core-js": "^3.30.1",
+        "js-cookie": "^3.0.4",
+        "lodash-es": "^4.17.21",
+        "mitt": "^3.0.0",
+        "moment-mini": "^2.29.4",
+        "nprogress": "^0.2.0",
+        "path": "^0.12.7",
+        "path-to-regexp": "^6.2.1",
+        "pinia": "^2.0.35",
+        "vant": "^4.9.4",
+        "vue": "3.2.47",
+        "vue-i18n": "9.2.2",
+        "vue-router": "4.1.6",
+        "vue3-lazyload": "^0.3.8"
+    },
+    "devDependencies": {
+        "@types/echarts": "^4.9.17",
+        "@types/lodash-es": "^4.17.7",
+        "@types/node": "^18.16.0",
+        "@typescript-eslint/eslint-plugin": "^5.59.0",
+        "@typescript-eslint/parser": "^5.59.0",
+        "@vant/auto-import-resolver": "^1.2.1",
+        "@vitejs/plugin-basic-ssl": "^1.0.1",
+        "@vitejs/plugin-legacy": "^4.0.2",
+        "@vitejs/plugin-vue": "^4.1.0",
+        "@vitejs/plugin-vue-jsx": "^3.0.1",
+        "@vue/compiler-sfc": "^3.2.47",
+        "@vue/eslint-config-typescript": "^11.0.2",
+        "autoprefixer": "^10.4.14",
+        "chalk": "^5.2.0",
+        "cross-env": "^7.0.3",
+        "cz-conventional-changelog": "^3.3.0",
+        "cz-customizable": "^7.0.0",
+        "eslint": "^8.39.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-vue": "^9.11.0",
+        "husky": "^8.0.3",
+        "lint-staged": "^13.2.1",
+        "log-symbols": "^5.1.0",
+        "postcss": "^8.4.23",
+        "postcss-pxtorem": "^6.1.0",
+        "sass": "^1.62.0",
+        "svg-sprite-loader": "^6.0.11",
+        "terser": "^5.17.1",
+        "typescript": "^5.0.4",
+        "unplugin-auto-import": "^0.15.3",
+        "unplugin-vue-components": "^0.24.1",
+        "vite": "^4.3.1",
+        "vite-plugin-babel-import": "^2.0.5",
+        "vite-plugin-html": "^3.2.0",
+        "vite-plugin-style-import": "^2.0.0",
+        "vite-plugin-svg-icons": "^2.0.1",
+        "vite-plugin-windicss": "^1.8.10",
+        "xlsx": "^0.18.5"
+    },
+    "browserslist": [
+        "> 1%",
+        "not ie 11",
+        "not op_mini all"
+    ],
+    "engines": {
+        "node": ">=14.18.0"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-customizable"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+/* 颜色 */
+:root {
+  /* 品牌色类 主色 */
+  --primary: rgba(90, 130, 230, 1); // 主色
+
+  /* 阴影 */
+  --shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.06);
+  --shadow2: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+
+  /* 骨架屏 */
+  --skeleton: rgba(173, 173, 173, 0.2);
+}
+
+html.dark {
+  background-color: rgb(53 53 53);
+  &:root {
+    /* 品牌色类 主色 */
+    --primary: rgba(255, 255, 255, 1); // 主色
+  }
+}
+
+// 苹方字体 #app默认是苹方字体
+$pingFang: 'PingFangSC-Regular', 'PingFang SC';
+$pingFangM: 'PingFangSC-Medium', 'PingFang SC';
+$pingFangB: 'PingFangSC-Semibold', 'PingFang SC';
+// 等宽字体
+$sameWidthFont: 'Helvetica Neue', 'Helvetica', 'PingFang SC', 'Hiragino Sans GB',
+  'Noto Sans CJK SC', 'Noto Sans CJK', 'Source Han Sans', 'WenQuanYi Micro Hei',
+  'Microsoft YaHei', sans-serif;

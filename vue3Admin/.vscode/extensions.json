@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "hollowtree.vue-snippets",
+    "vue.volar",
+    "shardulm94.trailing-spaces",
+    "antfu.unocss",
+  ],
+  "unwantedRecommendations": [
+    "octref.vetur",
+  ]
+}
